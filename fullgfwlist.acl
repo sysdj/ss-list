@@ -26,6 +26,7 @@
 (^|\.)twdvd\.com$
 (^|\.)xn--i2ru8q2qg\.com$
 (^|\.)eu-west-1\.compute\.amazonaws\.com$
+(^|\.)gointeract\.io$
 
 #GFWList IP start
 85.17.73.31
