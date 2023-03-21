@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-title" content="">
+		<meta name="viewport" content="width=device-width">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>.</title>
+
+<style>
+	body {
+		border: 0;
+		margin: 20px;
+/* 
+		background-image:url("images/a.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+*/
+	}
+	.toubu{margin-bottom:37px;}
+	p{
+		font-size:30px;
+		padding:0;
+	}
+	p span{
+		padding:0;
+	}
+	
+</style>
+
+<body>
+	<div class="toubu"><img src="images/top1.png" style="width:100%"></div>
+	<div style="text-align:center;">
+		<div id="date" style="font-size:90px;"></div>
+		<div id="time" style="font-size:120px;padding:2px 0 16px;"></div>
+		<div id="fiveMinAgo" style="font-size:35px;"></div>
+		<div style="font-size:35px;">订单编号：462761964039237118</div>
+	</div>
+	<div style="margin-top:50px;"><img src="images/ad.png" style="width:100%"></div>
+
+<script>
+    var date = new Date().toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' }).replace(/\//g, "月") + "日";
+    document.getElementById("date").innerHTML = date;
+	
+    setInterval(function() {
+        var time = new Date().toLocaleTimeString('zh-CN', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/:/g, ":");
+        document.getElementById("time").innerHTML = time;
+    }, 1000);
+	
+    var fiveMinAgo = new Date(Date.now() - 8 * 60 * 1000).toLocaleString('zh-CN', { hour12: false, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\//g, "-").replace(/,/g, "");
+    document.getElementById("fiveMinAgo").innerHTML = "创建时间：" + fiveMinAgo;
+</script>
+</body>
+</html>
